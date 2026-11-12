@@ -543,45 +543,25 @@ No exploitation, privilege escalation, or vulnerability validation was performed
 
 # 6. Recommendations
 
-Based on my observations, I recommend the following security practices.
+### 1. Conduct Regular Website Security Checks
 
-### 1. Keep Website Technologies Updated
+Organizations should regularly check their websites for possible security issues. Tools such as WhatWeb and WAFW00F can help identify website technologies and existing security measures that may need further review.
 
-Organizations should regularly update their web servers, content management systems, plugins, and other website components.
+### 2. Improve Network Visibility
 
-### 2. Review Publicly Exposed Information
+Network administrators should use network scanning tools such as Nmap or Zenmap to identify active devices. This can help them understand which devices are connected and detect unexpected changes in their network.
 
-Organizations should periodically review publicly accessible technical information and remove unnecessary disclosures where practical.
+### 3. Secure Domain and DNS Configurations
 
-### 3. Review HTTP Security Headers
+Organizations should regularly review their domain information and DNS records to ensure that configurations are accurate, updated, and do not expose unnecessary information.
 
-HTTP response headers should be checked to determine whether appropriate security headers are configured.
+### 4. Document and Review Security Findings
 
-### 4. Monitor DNS Configurations
+Results from reconnaissance and network scanning should be properly recorded, including commands, screenshots, and observations. This helps make future security assessments and troubleshooting easier.
 
-DNS records should be reviewed regularly to identify outdated entries, unnecessary services, and configuration issues.
+### 5. Verify Findings Before Taking Action
 
-### 5. Maintain Web Application Firewall Protection
-
-Web Application Firewall configurations should be maintained, monitored, and reviewed regularly to provide effective protection.
-
-### 6. Perform Authorized Network Scanning
-
-Organizations should periodically scan their own networks to identify active devices and maintain visibility over their infrastructure.
-
-### 7. Investigate Unknown Devices
-
-Unexpected devices discovered during network scans should be verified and investigated.
-
-### 8. Maintain Updated Network Documentation
-
-Network topology diagrams and device inventories should be maintained to support troubleshooting and security management.
-
-### 9. Follow Ethical Hacking Principles
-
-Security testing should only be performed on networks and systems where proper authorization has been obtained.
-
----
+Information collected from security tools should be carefully reviewed before identifying something as a vulnerability. Not every exposed IP address, software version, or DNS record indicates a security risk, so additional authorized testing may be necessary.
 
 # 7. Conclusion
 
