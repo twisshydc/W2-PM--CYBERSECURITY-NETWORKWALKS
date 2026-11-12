@@ -517,26 +517,27 @@ However, the topology is based on the results of the scan and may not represent 
 
 Based on the reconnaissance and network scanning activities, I identified several observations that may be relevant to a security assessment.
 
-| # | Finding | Evidence | Potential Impact | Assessment |
+| # | Finding | Evidence | Potential Impact | Risk Level |
 |---|---|---|---|---|
-| 1 | Website technologies identified | WhatWeb identified WordPress and related technologies | Reveals software information that may support further authorized security assessment | Informational |
-| 2 | Public server IP address identified | Nslookup resolved the domain to 192.232.216.135 | Reveals the network address associated with the website | Informational |
-| 3 | HTTP information exposed | Curl displayed HTTP response headers | May assist technology identification | Informational |
-| 4 | Web Application Firewall detected | WAFW00F identified ModSecurity | Reveals information about the website's security architecture | Informational |
-| 5 | DNS infrastructure identified | DNSRecon returned DNS records | Provides information about domain services and infrastructure | Informational |
-| 6 | Local network discovery | Zenmap detected one host (`192.168.61.1`) on the Host-Only subnet | Shows which host responded within the lab network; no unknown device was established | Informational |
+| 1 | Website technologies identified | WhatWeb identified WordPress and related technologies | Exposed software information could help attackers research known vulnerabilities in specific software versions. | Low |
+| 2 | Public server IP address identified | Nslookup resolved the domain to 192.232.216.135 | Provides the public IP address associated with the website, which may be used for further reconnaissance. | Medium |
+| 3 | HTTP information exposed | Curl displayed HTTP response headers | Reveals server and website information that could support additional technology fingerprinting. | Medium |
+| 4 | Web Application Firewall identified | WAFW00F detected ModSecurity (SpiderLabs) | Reveals information about the website's security architecture that could inform further reconnaissance. | Mediun |
+| 5 | DNS infrastructure information identified | DNSRecon returned DNS and service-related records | Public DNS information may assist in mapping the organization's services and infrastructure. | Low |
+| 6 | Live host discovered on local network | Zenmap detected one host (192.168.61.1) | Demonstrates that the host responds to network discovery, but no unauthorized devices or vulnerabilities were identified. | Low |
+
+**Risk Level Key:**
+- High — Significant security weakness with potentially serious consequences.
+- Medium — Security concern that may require additional investigation or remediation.
+- Low — Limited security exposure or observation with minimal demonstrated impact.
 
 ### Risk Assessment Notes
 
-The observations above are not confirmed security vulnerabilities.
+All six findings were classified as Low because the activities involved reconnaissance and host discovery rather than confirmed vulnerabilities.
 
-The activities mainly involved information gathering and network discovery.
+The results do not establish that the target systems are insecure or vulnerable to exploitation.
 
-No exploitation, privilege escalation, or vulnerability validation was performed.
-
-Therefore, the discovery of an IP address, web technology, or DNS record does not automatically mean that a website or network is vulnerable.
-
-Additional authorized testing would be required to validate actual security weaknesses.
+No exploitation, privilege escalation, or vulnerability validation was performed. Further authorized testing would be required to determine whether any actual security weaknesses exist.
 
 ---
 
